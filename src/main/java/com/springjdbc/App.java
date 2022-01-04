@@ -34,8 +34,9 @@ public class App
         student2.setName("Raj");
         student2.setCity("California");
 
-        System.out.println(studentDao.remove(student2));
+        //System.out.println(studentDao.remove(student2));
 
+        System.out.println(studentDao.search(10000));
     }
 
 }
