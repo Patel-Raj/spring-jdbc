@@ -3,6 +3,8 @@ package com.springjdbc.dao;
 import com.springjdbc.Pojos.Student;
 import org.springframework.jdbc.core.JdbcTemplate;
 
+import java.util.List;
+
 public class StudentDaoImpl implements StudentDao{
 
     private JdbcTemplate jdbcTemplate;
@@ -41,5 +43,12 @@ public class StudentDaoImpl implements StudentDao{
         String query = "select * from student where id=?;";
         Student student = jdbcTemplate.queryForObject(query, new StudentRowMapperImpl() , id);
         return student;
+    }
+
+    @Override
+    public List<Student> getAllStudents() {
+        String query = "select * from student;";
+        List<Student> students = jdbcTemplate.query(query, new StudentRowMapperImpl());
+        return students;
     }
 }

@@ -36,7 +36,9 @@ public class App
 
         //System.out.println(studentDao.remove(student2));
 
-        System.out.println(studentDao.search(10000));
+        //System.out.println(studentDao.search(10000));
+
+        System.out.println(studentDao.getAllStudents());
     }
 
 }
