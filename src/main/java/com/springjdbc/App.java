@@ -26,7 +26,15 @@ public class App
         student1.setId(111);
         student1.setName("Raj");
         student1.setCity("California");
-        System.out.println(studentDao.update(student1));
+
+        //System.out.println(studentDao.update(student1));
+
+        Student student2 = new Student();
+        student2.setId(1);
+        student2.setName("Raj");
+        student2.setCity("California");
+
+        System.out.println(studentDao.remove(student2));
 
     }
 
