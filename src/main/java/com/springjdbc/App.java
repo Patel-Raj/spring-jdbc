@@ -20,8 +20,13 @@ public class App
         student.setName("Mit");
         student.setCity("California");
 
-        System.out.println(studentDao.insert(student));
+        //System.out.println(studentDao.insert(student));
 
+        Student student1 = new Student();
+        student1.setId(111);
+        student1.setName("Raj");
+        student1.setCity("California");
+        System.out.println(studentDao.update(student1));
 
     }
 
