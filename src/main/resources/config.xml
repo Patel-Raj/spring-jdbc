@@ -24,5 +24,11 @@ http://www.springframework.org/schema/context/spring-context.xsd">
         </property>
     </bean>
 
+    <bean class="com.springjdbc.dao.StudentDaoImpl" name="studentDaoImpl">
+        <property name="jdbcTemplate">
+            <ref bean="jdbcTemplate"/>
+        </property>
+    </bean>
+
 
 </beans>
