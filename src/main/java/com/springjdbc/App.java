@@ -1,8 +1,10 @@
 package com.springjdbc;
 
 import com.springjdbc.Pojos.Student;
+import com.springjdbc.config.JavaConfig;
 import com.springjdbc.dao.StudentDao;
 import org.springframework.context.ApplicationContext;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 import org.springframework.jdbc.core.JdbcTemplate;
 
@@ -13,7 +15,8 @@ import org.springframework.jdbc.core.JdbcTemplate;
 public class App 
 {
     public static void main( String[] args ) {
-        ApplicationContext applicationContext = new ClassPathXmlApplicationContext("config.xml");
+        //ApplicationContext applicationContext = new ClassPathXmlApplicationContext("config.xml");
+        ApplicationContext applicationContext = new AnnotationConfigApplicationContext(JavaConfig.class);
         StudentDao studentDao = applicationContext.getBean("studentDaoImpl", StudentDao.class);
         Student student = new Student();
         student.setId(101);
